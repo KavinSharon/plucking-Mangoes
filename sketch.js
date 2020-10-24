@@ -70,12 +70,17 @@ function mouseReleased(){
   
 function keyPressed(){
 	if(keyCode === 32){
-		Matter.Body.setPosition(stone.body,{x:235,y:420})
-		launcherObject.attach(stoneObj.body);
+		string.attach(stone.body);
 	}
 }
 
-fuction detectCollision(lStone,lMango)
+function detectCollision(lStone,lMango)
 {
   mangoBodyPosition = lMango.body.position
+  stoneBodyPosition = lStone.body.position
+  
+  var distance = dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
+  if(distance<-lMango.r+lStone.r){
+    Matter.Body.setStatic(lMango.body,false);
+  }
 }

@@ -70,7 +70,8 @@ function mouseReleased(){
   
 function keyPressed(){
 	if(keyCode === 32){
-		string.attach(stone.body);
+    string.attach(stone.body);
+    console.log("kavin");
 	}
 }
 
@@ -80,7 +81,8 @@ function detectCollision(lStone,lMango)
   stoneBodyPosition = lStone.body.position
   
   var distance = dist(stoneBodyPosition.x,stoneBodyPosition.y,mangoBodyPosition.x,mangoBodyPosition.y)
-  if(distance<-lMango.r+lStone.r){
+  //console.log(distance,lMango.radius,lStone.radius);
+  if(distance<=lMango.radius+lStone.radius){
     Matter.Body.setStatic(lMango.body,false);
   }
 }

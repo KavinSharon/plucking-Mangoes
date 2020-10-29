@@ -7,9 +7,9 @@ class Tree {
       var options2 ={
           isStatic:false
       }
-      this.width = 500;
+      this.width = 100;
       this.height = 100;
-      this.thickness = 500;
+      this.thickness = 20;
 
       this.bottomBody = Bodies.rectangle(x, y, this.width,this.thickness, options);
       this.rightBody = Bodies.rectangle(x+100, y-50, this.thickness,this.height, options2);
@@ -27,20 +27,22 @@ class Tree {
       push();
       translate(pos1.x,pos1.y);
       imageMode(CENTER);
-      image(this.image,0,0,this.width,this.thickness);
+      image(this.image,0,0,this.width+500,this.thickness+500);
+      // rectMode(CENTER);
+      // rect(0,0,this.width,this.thickness);
       pop();
 
-    //   push();
-    //   translate(pos2.x,pos2.y);
-    //   imageMode(CENTER);
-    //   image(this.image,0,0,this.width,this.height);
-    //   pop();
+      push();
+      translate(pos2.x,pos2.y);
+      // rectMode(CENTER);
+      // rect(0,0,this.thickness,this.height);
+      pop();
 
-    //   push();
-    //   translate(pos3.x,pos3.y);
-    //   imageMode(CENTER);
-    //   image(this.image,0,0,this.width,this.height);
-    //   pop();
+      push();
+      translate(pos3.x,pos3.y);
+      // rectMode(CENTER);
+      // rect(0,0,this.thickness,this.height);
+      pop();
       
     }
   };

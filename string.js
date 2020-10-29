@@ -11,6 +11,11 @@ class String {
         this.Sling = Constraint.create(options);
         World.add(world, this.Sling);
     }
+
+    attach(body){
+        this.Sling.bodyA = body;
+    }
+
       fly(){
       this.Sling.bodyA = null;
 
